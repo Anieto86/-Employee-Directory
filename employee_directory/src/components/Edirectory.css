@@ -1,0 +1,14 @@
+.head{
+background-color: rgb(28, 28, 76);
+padding-bottom: 20px;
+color: white;
+display: flex;
+justify-content: center;
+}
+
+.ED{
+    padding-top: 20px;
+    display: flex;
+justify-content: center;
+
+}
