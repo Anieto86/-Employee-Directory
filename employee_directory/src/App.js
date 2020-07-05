@@ -4,6 +4,7 @@ import './App.css';
 //components
 import Edirectory from './components/Edirectory'
 import Inpsearch from './components/Inpsearch'
+import Grid from './components/Grid'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <br/>
         <Inpsearch/>
         <br/>
+        <Grid/>
     </div>
   );
 }
