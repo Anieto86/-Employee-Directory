@@ -12,7 +12,7 @@ export default class Edirectory extends Component {
                 <ul className="nav">
                     <li className="nav-item">
                         <h2 className="ED">Employee Directory</h2>
-                        <p>Click om carrots to filter feadling or use the search box to arrow your results</p>
+                        <p> Find Employee</p>
                         <hr className="redL"/>
                     </li>
                 </ul>

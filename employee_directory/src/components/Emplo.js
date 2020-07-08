@@ -7,49 +7,48 @@ import "./style/Emplo.css"
 export default class Emplo extends Component {
 
 
-    state = {
-        loading: true,
-        persons: [],
+    // state = {
+    //     loading: true,
+    //     persons: [],
 
-    }
+    // }
 
     // componentDidMount() is ejected ones the component was render
-    async componentDidMount() {
+    // async componentDidMount() {
 
 
-        for (let i = 0; i < 10; i++) {
+    //     for (let i = 0; i < 10; i++) {
 
-            const res = await fetch('https://randomuser.me/api/')
-            // console.log(res)
-            const data = await res.json();
-            console.log(data, 'this is data')
-            //    this.setState({ persons: data.results[0], loading: false });
-            // console.log(data.results[0]);
-            // week19   13loop inside render fuction!! map. 
-            const newArray = this.state.persons
-            newArray.push(data.results[0])
-            this.setState({ persons: newArray })
-            if(i === 9 ) {
-                this.setState({loading: false})
-            }
+    //         const res = await fetch('https://randomuser.me/api/')
+    //         // console.log(res)
+    //         const data = await res.json();
+    //         // console.log(data, 'this is data')
 
-        }
+    //         //New array, push new result for render 10 employee (loop )
+    //         const newArray = this.state.persons
+    //         newArray.push(data.results[0]) // el result comes from a propety of the object in this case
+    //         this.setState({ persons: newArray })
+    //         if (i === 9) {
+    //             this.setState({ loading: false })
+    //         }
+    //     }
+    // }
 
-
-    }
 
 
 
     render() {
-        console.log(this.state.persons, 'these are the persons')
+        // console.log(this.state.persons, 'these are the persons')
 
         return (
             <div className="container">
-                {this.state.loading || !this.state.persons ? (
-                    <div> loading...</div>  // {this.props.myprop} 
+                
+                {this.props.state.loading || !this.props.state.persons ? (
+                    //this.state.loading or no this.state.persons 
+                    <div> loading...</div>
                 ) : (
                         <div>
-                            {console.log(this.state.person)}
+                            
                             <table className="table table-striped">
                                 <thead>
                                     <tr>
@@ -60,17 +59,17 @@ export default class Emplo extends Component {
                                         <th scope="col">DOB</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    {this.state.persons.map( (e, index ) => (
-                                        <tr key= {index}>
-                                        <img src={e.picture.medium} alt='' />
-                                        <td>{e.name.first}</td>
-                                        <td>{e.phone}</td>
-                                        <td>{e.email}</td>
-                                        <td>{e.dob.age}</td>
-                                    </tr>
-                                    ) )}
-                                    
+                                <tbody> 
+                                    {this.props.state.persons.filter(this.fiterFunction).map((e, index) => (
+                                        <tr key={index}>
+                                            <img src={e.picture.medium} alt='' />
+                                            <td>{e.name.first}</td>
+                                            <td>{e.phone}</td>
+                                            <td>{e.email}</td>
+                                            <td>{e.dob.age}</td>
+                                        </tr>
+                                    ))}
+
                                 </tbody>
                             </table>
                         </div>
@@ -80,3 +79,6 @@ export default class Emplo extends Component {
     }
 
 }
+
+
+
