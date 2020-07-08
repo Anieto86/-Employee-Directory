@@ -4,7 +4,11 @@ import './App.css';
 //components
 import Edirectory from './components/Edirectory'
 import Inpsearch from './components/Inpsearch'
-import Grid from './components/Grid'
+import Emplo from './components/Emplo'
+
+//Posts API froms  https://randomuser.me/ RANDOM USER GENERATOR
+ 
+// import Posts from './components/utils/Post'
 
 function App() {
   return (
@@ -13,7 +17,7 @@ function App() {
         <br/>
         <Inpsearch/>
         <br/>
-        <Grid/>
+        <Emplo/>
     </div>
   );
 }
